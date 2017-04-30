@@ -1,0 +1,36 @@
+body {
+  background-color: pink;
+  transition: all 2.10s;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#wrapper {
+  width: 100%;
+}
+
+#msglen {
+  position: absolute;
+  z-index: -42;
+  font-size: 50vw;
+  color: rgba(50, 50, 50, .1)
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 120%;
+  padding: 1em;
+  text-align: center;
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid #000;
+  font-family: monospace;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, .25);
+}

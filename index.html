@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hv4 vil du??2</title>
+    <link rel="stylesheet" href="stil-bro.css">
+    <script src="req.js"></script>
+    <script>
+      function postmsg () {
+        console.log('POST', msg.value)
+        if (!msg.value.length) return false
+
+        req('http://localhost:3000/msg', {msg: msg.value}, (err, req) => {
+          if (err) {
+            console.error(err)
+            showmessage('did not work as expected :(')
+            return
+          }
+          showmessage('<3')
+          console.log('done', req.json)
+        })
+
+        return false
+      }
+
+      function showmessage (msg) {
+        while (body.hasChildNodes()) body.removeChild(body.lastChild)
+        const h1 = document.createElement('h1')
+        h1.innerText = msg
+        body.appendChild(h1)
+      }
+
+      function rdy () {
+        msglen.innerText = msg.maxLength
+        msg.onkeydown = (e) => {
+          msglen.innerText = Number(msg.maxLength) - msg.value.length
+        }
+      }
+    </script>
+  </head>
+  <body id="body" onload="rdy()">
+    <div id="wrapper">
+      <form onsubmit="postmsg(); return false">
+        <input id="msg" type="text" name="msg" value="" placeholder="natt til første mai, brosis" maxlength="21">
+      </form>
+    </div>
+    <div id="msglen"></div>
+  </body>
+</html>
