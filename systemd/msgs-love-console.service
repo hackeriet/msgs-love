@@ -1,0 +1,14 @@
+[Unit]
+Description=Message love tty
+
+[Service]
+Type=simple
+Environment="MESSAGE_DIR=/srv/msgs-love/messages" "WIDTH=114" "LAST_PROGRAM=/usr/games/lolcat"
+WorkingDirectory=/srv/msgs-love
+ExecStart=/usr/sbin/showcommandvt 11 /srv/msgs-love/printmessages.sh | fold -w${WIDTH} | ${LAST_PROGRAM}
+#StandardInput=tty
+StandardOutput=tty
+TTYPath=/dev/tty11
+
+[Install]
+WantedBy=multi-user.target

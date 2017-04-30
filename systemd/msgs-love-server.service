@@ -1,0 +1,13 @@
+[Unit]
+Description=Message love Node.js server
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+Environment="MESSAGE_DIR=/srv/msgs-love/messages"
+WorkingDirectory=/srv/msgs-love
+ExecStart=/usr/bin/node server.js
+
+[Install]
+WantedBy=multi-user.target
