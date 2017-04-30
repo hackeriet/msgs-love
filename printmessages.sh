@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MESSAGE_PATH=${MESSAGE_PATH:-"./"}
+MESSAGE_PATH=${MESSAGE_PATH:-"."}
 
 while true; do
   for f in ${MESSAGE_PATH}/*
