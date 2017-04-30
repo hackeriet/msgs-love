@@ -10,7 +10,7 @@
         console.log('POST', msg.value)
         if (!msg.value.length) return false
 
-        req('http://localhost:3000/msg', {msg: msg.value}, (err, req) => {
+        req('/msg', {msg: msg.value}, (err, req) => {
           if (err) {
             console.error(err)
             showmessage('did not work as expected :(')
