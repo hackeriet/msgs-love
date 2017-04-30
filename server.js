@@ -8,7 +8,7 @@ const getFilename = () => path.join(messagePath, Date.now() + '.txt')
 
 app.use(require('body-parser').json())
 
-app.post('/msg', (req, res, next) => {
+app.post('/', (req, res, next) => {
   const msg = req.body.msg
 
   if (!msg.length) return next('Too short')
