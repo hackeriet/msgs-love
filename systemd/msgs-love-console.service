@@ -5,7 +5,7 @@ Description=Message love tty
 Type=simple
 Environment="MESSAGE_PATH=/srv/msgs-love/messages" "ROUNDS=420" "WIDTH=114" "LAST_PROGRAM=/usr/games/lolcat"
 WorkingDirectory=/srv/msgs-love
-ExecStart=/usr/sbin/showcommandvt 11 /srv/msgs-love/printmessages.sh | fold -w${WIDTH} | ${LAST_PROGRAM}
+ExecStart=/srv/msgs-love/bin/showcommandvt 11 /srv/msgs-love/printmessages.sh | fold -w${WIDTH} | ${LAST_PROGRAM}
 #StandardInput=tty
 StandardOutput=tty
 TTYPath=/dev/tty11
