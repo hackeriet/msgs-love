@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const app = express()
 
 const MESSAGE_PATH = process.env.MESSAGE_PATH || '/tmp'
+const PORT = process.env.PORT || 3000
 
 app.use(bodyParser.json())
 
@@ -31,6 +32,6 @@ app.use((err, req, res, next) => {
   res.status(500).send('don\'t try to break me </3')
 })
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000')
+app.listen(PORT, () => {
+  console.log('Listening on port ' + PORT)
 })
